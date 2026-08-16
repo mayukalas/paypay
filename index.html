@@ -12,7 +12,7 @@
     -webkit-user-select: none;
 }
 
-/* スクロールおよび引っ張り（バウンス）を完全に禁止 */
+/* 背景黒の撤去とスクロール・バウンスの全無効化 */
 html, body {
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@ html, body {
 .app {
     width: 100vw;
     height: 100vh;
-    height: 100dvh; /* スマホのリアルタイム画面高に対応 */
+    height: 100dvh; /* スマホのアドレスバー変動に対応 */
     background: linear-gradient(160deg, #ff5e62, #ff1a40);
     display: flex;
     flex-direction: column;
@@ -177,7 +177,7 @@ html, body {
 }
 
 /* =========================
-   送金完了画面
+   送金完了画面（実物再現）
 ========================= */
 .complete-screen {
     display: none;
@@ -312,8 +312,8 @@ html, body {
 
             <!-- アバター & 宛名 -->
             <div class="header-center">
-                <div class="user-avatar">🌊</div>
-                <div class="recipient-name">Sota.A さんに送る ❯</div>
+                <div class="user-avatar">👤</div>
+                <div class="recipient-name">Nico☺︎ さんに送る ❯</div>
                 <div id="currentDateStr" class="tx-date">-</div>
             </div>
 
@@ -359,8 +359,8 @@ html, body {
         </div>
 
         <div class="header-center">
-            <div class="user-avatar">🌊</div>
-            <div class="recipient-name">Sota.A さんに送る ❯</div>
+            <div class="user-avatar">👤</div>
+            <div class="recipient-name">Nico☺︎ さんに送る ❯</div>
             <div id="completeHeaderDate" class="tx-date">-</div>
         </div>
 
@@ -419,7 +419,7 @@ html, body {
 <script>
 let rawValue = "";
 
-// スクロール・バウンスをJavaScript側でも確実に防止
+// タッチイベントによる画面スクロール・引っ張り防止
 document.addEventListener('touchmove', function(e) {
     e.preventDefault();
 }, { passive: false });
